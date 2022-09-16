@@ -34,8 +34,14 @@
     display: inline-block;
 }
 .header-menu {
+    border-bottom: 1px solid #dddddd;
+    height: 79px;
+}
+.header-total {
     display: flex;
-    padding: 19.5px 30px 1.5px 30px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
     justify-content: space-between;
 }
 .header-menu li {
@@ -44,27 +50,28 @@
 .header-menu li a {
     text-decoration: none;
     color: black;
+    align-items: center;
 }
 .header-logo {
     letter-spacing: 15px;
     font-size: 20px;
     width: 166px;
-    height: 24px;
     border: 2px solid black;
     font-family: 'Montserrat', bold;
     font-weight: 700;
 }
 .header-logo {
     padding: 6px 15px;
+    margin-left: 1.5%;
 }
 .header-item {
     display: flex;
     font-size: 14px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-family: 'Montserrat', bold;
     font-weight: 700;
-    padding: 10px 60px;
-    margin-right: 7%;
+    margin-right: 8%;
+    margin-top: 1%;
 }
 .header-item li {
     padding-left: 51px;
@@ -77,10 +84,13 @@
 }
 .header_warp-icon {
     display: flex;
-    letter-spacing: 11px;
+    letter-spacing: 30px;
     font-size: 28px;
-    padding: 5px 0px;
+    margin-right: 1.7%;
 }
+/* .shopping {
+    height: 100%;
+} */
 .banner {
     display: flex;
     position: relative;
@@ -244,18 +254,37 @@
     position: relative;
     width: 100%;
 }
+.navigation-img {
+    display: block;
+    width: 100%;
+}
 .navigation-titlet {
     position: absolute;
     text-align: center;
     top: 10%;
-    left: 43.9%;
-    letter-spacing: 4px;
-    font-family: 'Montserrat';
+    left: 44%;
+    letter-spacing: 4.9px;
+    font-family: 'Montserrat', bold;
     font-weight: 600;
     line-height: 30px;
 }
 .navigation-titlet h5 {
-    top: 5%;
+    color: #8262b5;
+}
+
+.navigation-titlet h2 {
+    margin-left: -2px;
+    margin-top: 2px;
+    letter-spacing: 2.3px;
+}
+.navigation-titlet h2::after{
+    position: absolute;
+    top: 135%;
+    left: 38.5%;
+    content: "";
+    width: 50px;
+    height: 1px;
+    background-color: #8262b5;
 }
 .navigation-slider {
     position: absolute;
@@ -301,7 +330,7 @@
     margin-bottom: 18px;
 }
 .comment {
-    font-size: 14px;
+    font-size: 12px;
     padding-left: 18px;
     letter-spacing: 5px;
     margin-bottom: 20px;
@@ -329,4 +358,143 @@
     text-align: center;
     font-size: 16px;
     color: #fff;
+}
+.foodter {
+    width: 100%;
+    background-color: black;
+    height: 100%;
+}
+.footer-top {
+    display: flex;
+    width: 100%;
+    max-width: 1140px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: #fff;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+.footer-top h3{
+    padding-bottom: 27px;
+    color: #f7f7f7;
+    font-family: 'Montserrat', Regular;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+}
+.footer-heart {
+    width: 24%;
+}
+.footer-text {
+    border-top: 1px solid #393939;
+    padding-top: 19px;
+
+}
+.footer-heart p {
+    letter-spacing: 0.3px;
+    line-height: 23px;
+    color: #7a7a7a;
+    padding-bottom: 42px;
+    font-family: 'Open Sans';
+}
+.footer-heart-icon {
+    letter-spacing: 14px;
+    color: #828282;
+    cursor: pointer;
+}
+.footer-heart-icon i:hover  {
+    color: #fff;
+}
+.footer-heat2 {
+    width: 35%;
+    margin-left: 132px;
+}
+.navi-heat a:hover  {
+    color: #fff;
+    text-decoration: underline;
+}
+.footer-heat2 li {
+    list-style: none;
+}
+.navi-heat {
+    display: flex;
+    width: 100%;
+    line-height: 30px;
+}
+.navi-heat li a {
+    color: #7a7a7a;
+    text-decoration: none;
+}
+.navi-left {
+    width: 50%;
+}
+.navi-right {
+    width: 50%;
+    margin-left: 10px;
+}
+.footer-heart3 {
+    width: 24%;
+    margin-left: 113px;
+}
+.shop {
+    line-height: 34px;
+    color: #7a7a7a;
+}
+.shop a {
+    color: #7a7a7a;
+    text-decoration: none;
+}
+.map i {
+    margin-right: 11px;
+    margin-left: -3px;
+}
+.map span {
+    margin-left: 27px;
+}
+.map:hover >a {
+    color: #fff;
+    text-decoration: underline;
+}
+.phone i {
+    margin-right: 14px;
+    margin-left: -3px;
+    font-size: 12px;
+}
+.phone:hover >a {
+    color: #fff;
+    text-decoration: underline;
+}
+.mail i {
+    margin-right: 16px;
+    margin-left: -3px;
+}
+.mail:hover >a {
+    color: #fff;
+    text-decoration: underline;
+}
+.foodter-bottom {
+    border-top: 1px solid#393939;
+    height: 70px;
+    align-items: center;
+}
+.foodter-total {
+    display: flex;
+    width: 100%;
+    max-width: 1140px;
+    height: 100%;
+    margin: 0 auto;
+    color: #fff;
+    align-items: center;
+    justify-content: space-between;
+}
+.foodter-left a {
+    color: #888888;
+    text-decoration: none;
+}
+.tym {
+   color: red;
+}
+.foodter-right {
+    color: #888888;
 }
