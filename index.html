@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./bai.css">
+    <link rel="stylesheet" href="./responsive.css">
     <script src="https://kit.fontawesome.com/2ca226c368.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;1,100;1,200;1,300;1,400&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
-  
+   <!-- Link Swiper's CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 </head>
 <body>
     <!-- ------header------ -->
@@ -26,6 +28,7 @@
         </div>
         <div class="header-menu">
             <div class="header-total">
+                <i class="fa-menu fa-solid fa-bars"></i>
                 <div class="header-logo">
                     <li><a href="">FRANCO</a></li>
                 </div>
@@ -44,7 +47,9 @@
                 <div class="header_warp-icon">
                     <i onclick="love ()" class="icon-love fa-regular fa-heart"></i>
                     <!-- <i onclick="name()" class="fa-solid fa-cart-shopping"></i> -->
-                    <img src="./img/shopcart.png" alt="" class="shopping">
+                    <div onclick="name ()" class="img">
+                        <img src="./img/shopcart.png" alt="" class="shopping">
+                    </div>
                 </div>
             </div>
         </div>
@@ -193,79 +198,210 @@
     </div>
     <!-- ---------slider-------- -->
     <div class="navigation">
-        <img  src="./img/bac.png" alt="" class="navigation-img">
             <div class="navigation-titlet">
                 <h5>LATEST</h5>
                 <h2>NEWS & EVENTS</h2>
             </div>
-            <div class="navigation-slider">
-                <div class="slider-title">
-                    <img src="./img/tit1.png" alt="" class="slider-img">
-                    <div class="date">
-                        <div class="date-border">
-                            <div class="date-year">
-                                <span>Jan 23</span>
+            <div class="swiper mySwiper navigation-slider">
+                <div class="swiper-wrapper slider-container ">
+                    <div class="swiper-slide slider-title">
+                        <img src="./img/tit1.png" alt="" class="slider-img">
+                        <div class="date">
+                            <div class="date-border">
+                                <div class="date-year">
+                                    <span>Jan 23</span>
+                                </div>
                             </div>
+                            
                         </div>
-                        
+                        <div class="titlet-text">
+                            <h3>In commodo dolor vitae</h3>
+                            <p>Aliquam tempor sagittis neque, vel aliquam risus consectetur vel.
+                            Aenean hendrerit, elit a lacinia suscipit, orci mauris.</p>
+                        </div>
+                        <div class="gach"></div>
+                        <div class="comment">
+                            <i class="fa-regular fa-comment">12</i>
+                            <i class="fa-regular fa-heart">6</i>
+                        </div>
                     </div>
-                    <div class="titlet-text">
-                        <h3>In commodo dolor vitae</h3>
-                        <p>Aliquam tempor sagittis neque, vel aliquam risus consectetur vel.
-                        Aenean hendrerit, elit a lacinia suscipit, orci mauris.</p>
-                    </div>
-                    <div class="gach"></div>
-                    <div class="comment">
-                        <i class="fa-regular fa-comment">12</i>
-                        <i class="fa-regular fa-heart">6</i>
-                    </div>
-                </div>
 
-                <div class="slider-title">
-                    <img src="./img/tit2.png" alt="" class="slider-img">
-                    <div class="date">
-                        <div class="date-border">
-                            <div class="date-year">
-                                <span>Jan 23</span>
+                    <div class="swiper-slide slider-title">
+                        <img src="./img/tit2.png" alt="" class="slider-img">
+                        <div class="date">
+                            <div class="date-border">
+                                <div class="date-year">
+                                    <span>Jan 23</span>
+                                </div>
                             </div>
                         </div>
+                        <div class="titlet-text">
+                            <h3>Vivamus non dignissim elit</h3>
+                            <p>Aliquam tempor sagittis neque, vel aliquam risus consectetur vel.
+                            Aenean hendrerit, elit a lacinia suscipit, orci mauris.</p>
+                        </div>
+                        <div class="gach"></div>
+                        <div class="comment">
+                            <i class="fa-regular fa-comment">12</i>
+                            <i class="fa-regular fa-heart">6</i>
+                        </div>
                     </div>
-                    <div class="titlet-text">
-                        <h3>Vivamus non dignissim elit</h3>
-                        <p>Aliquam tempor sagittis neque, vel aliquam risus consectetur vel.
-                        Aenean hendrerit, elit a lacinia suscipit, orci mauris.</p>
-                    </div>
-                    <div class="gach"></div>
-                    <div class="comment">
-                        <i class="fa-regular fa-comment">12</i>
-                        <i class="fa-regular fa-heart">6</i>
-                    </div>
-                </div>
 
-                <div class="slider-title">
-                    <img src="./img/tit3.png" alt="" class="slider-img">
-                    <div class="date">
-                        <div class="date-border">
-                            <div class="date-year">
-                                <span>Jan 23</span>
+                    <div class="swiper-slide slider-title">
+                        <img src="./img/tit3.png" alt="" class="slider-img">
+                        <div class="date">
+                            <div class="date-border">
+                                <div class="date-year">
+                                    <span>Jan 23</span>
+                                </div>
                             </div>
                         </div>
+                        <div class="titlet-text">
+                            <h3>Ut lacinia erat ut diam volutpat</h3>
+                            <p>Aliquam tempor sagittis neque, vel aliquam risus consectetur vel.
+                            Aenean hendrerit, elit a lacinia suscipit, orci mauris.</p>
+                        </div>
+                        <div class="gach"></div>
+                        <div class="comment">
+                            <i class="fa-regular fa-comment">12</i>
+                            <i class="fa-regular fa-heart">6</i>
+                        </div>
                     </div>
-                    <div class="titlet-text">
-                        <h3>Ut lacinia erat ut diam volutpat</h3>
-                        <p>Aliquam tempor sagittis neque, vel aliquam risus consectetur vel.
-                        Aenean hendrerit, elit a lacinia suscipit, orci mauris.</p>
+
+                    <div class="swiper-slide slider-title">
+                        <img src="./img/tit1.png" alt="" class="slider-img">
+                        <div class="date">
+                            <div class="date-border">
+                                <div class="date-year">
+                                    <span>Jan 23</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="titlet-text">
+                            <h3>In commodo dolor vitae</h3>
+                            <p>Aliquam tempor sagittis neque, vel aliquam risus consectetur vel.
+                            Aenean hendrerit, elit a lacinia suscipit, orci mauris.</p>
+                        </div>
+                        <div class="gach"></div>
+                        <div class="comment">
+                            <i class="fa-regular fa-comment">12</i>
+                            <i class="fa-regular fa-heart">6</i>
+                        </div>
                     </div>
-                    <div class="gach"></div>
-                    <div class="comment">
-                        <i class="fa-regular fa-comment">12</i>
-                        <i class="fa-regular fa-heart">6</i>
+
+                    <div class="swiper-slide slider-title">
+                        <img src="./img/tit2.png" alt="" class="slider-img">
+                        <div class="date">
+                            <div class="date-border">
+                                <div class="date-year">
+                                    <span>Jan 23</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titlet-text">
+                            <h3>Vivamus non dignissim elit</h3>
+                            <p>Aliquam tempor sagittis neque, vel aliquam risus consectetur vel.
+                            Aenean hendrerit, elit a lacinia suscipit, orci mauris.</p>
+                        </div>
+                        <div class="gach"></div>
+                        <div class="comment">
+                            <i class="fa-regular fa-comment">12</i>
+                            <i class="fa-regular fa-heart">6</i>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="swiper-slide slider-title">
+                        <img src="./img/tit3.png" alt="" class="slider-img">
+                        <div class="date">
+                            <div class="date-border">
+                                <div class="date-year">
+                                    <span>Jan 23</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titlet-text">
+                            <h3>Ut lacinia erat ut diam volutpat</h3>
+                            <p>Aliquam tempor sagittis neque, vel aliquam risus consectetur vel.
+                            Aenean hendrerit, elit a lacinia suscipit, orci mauris.</p>
+                        </div>
+                        <div class="gach"></div>
+                        <div class="comment">
+                            <i class="fa-regular fa-comment">12</i>
+                            <i class="fa-regular fa-heart">6</i>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide slider-title">
+                        <img src="./img/tit1.png" alt="" class="slider-img">
+                        <div class="date">
+                            <div class="date-border">
+                                <div class="date-year">
+                                    <span>Jan 23</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="titlet-text">
+                            <h3>In commodo dolor vitae</h3>
+                            <p>Aliquam tempor sagittis neque, vel aliquam risus consectetur vel.
+                            Aenean hendrerit, elit a lacinia suscipit, orci mauris.</p>
+                        </div>
+                        <div class="gach"></div>
+                        <div class="comment">
+                            <i class="fa-regular fa-comment">12</i>
+                            <i class="fa-regular fa-heart">6</i>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide slider-title">
+                        <img src="./img/tit2.png" alt="" class="slider-img">
+                        <div class="date">
+                            <div class="date-border">
+                                <div class="date-year">
+                                    <span>Jan 23</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titlet-text">
+                            <h3>Vivamus non dignissim elit</h3>
+                            <p>Aliquam tempor sagittis neque, vel aliquam risus consectetur vel.
+                            Aenean hendrerit, elit a lacinia suscipit, orci mauris.</p>
+                        </div>
+                        <div class="gach"></div>
+                        <div class="comment">
+                            <i class="fa-regular fa-comment">12</i>
+                            <i class="fa-regular fa-heart">6</i>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide slider-title">
+                        <img src="./img/tit3.png" alt="" class="slider-img">
+                        <div class="date">
+                            <div class="date-border">
+                                <div class="date-year">
+                                    <span>Jan 23</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="titlet-text">
+                            <h3>Ut lacinia erat ut diam volutpat</h3>
+                            <p>Aliquam tempor sagittis neque, vel aliquam risus consectetur vel.
+                            Aenean hendrerit, elit a lacinia suscipit, orci mauris.</p>
+                        </div>
+                        <div class="gach"></div>
+                        <div class="comment">
+                            <i class="fa-regular fa-comment">12</i>
+                            <i class="fa-regular fa-heart">6</i>
+                        </div>
+                    </div>
+                </div>  
             </div>
-        <div class="dots">
-            
-        </div>
+            <div class="slider__slider-change swiper-pagination">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
     </div>
     <!-- -------footer------ -->
     <div class="foodter">
@@ -328,6 +464,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="foodter-bottom">
                 <div class="foodter-total">
@@ -348,6 +485,7 @@
     </div>
     <!-- -----------shopping-cart------ -->
     <div class="header__add-cart">
+        <i onclick="element ()" class="xoa fa-solid fa-xmark"></i>
         <form action="">
             <table>
                 <thead>
@@ -360,14 +498,14 @@
                 </thead>
                 <tbody class="item">
                     <!-- <tr class="cart-item cart-item-1" data-id="1">
-                        <td><img src="./assets/img/ads2.jpg" alt="cart-ads1"></td>
+                        <td><img style="width: 70px;" src="./img/product_1.png" alt="cart-ads1"></td>
                         <td> <h3 class="heading">Supendisse id volutpat</h3></td>
                         <td><p>$<span class="price"> 84.00</span></p></td>
                         <td><input type="number" value="1" min="1"></td>
                         <td>Xoá</td>
                     </tr>
                     <tr>
-                        <td><img src="./assets/img/ads2.jpg" alt="cart-ads1"></td>
+                        <td><img style="width: 70px;" src="./img/product_2.png" alt="cart-ads1"></td>
                         <td> <h3 class="heading">Supendisse id volutpat</h3></td>
                         <td><p>$<span class="price"> 84.00</span></p></td>
                         <td><input type="number" value="1" min="1"></td>
@@ -381,6 +519,59 @@
         </div>
       
     </div>
+    
     <script src="scriptt.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            slidesPerGroup: 1,
+          },
+            375: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            slidesPerGroup: 1,
+          },
+            425: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            slidesPerGroup: 1,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 25,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+          },
+        }
+
+        });
+    </script>
+        <!-- <script>
+            $(document).ready(function() {
+                $(' i.fa-menu.fa-solid.fa-bars').click(function(){
+                    alert('ok');
+                });
+            })
+        </script> -->
 </body>
 </html>

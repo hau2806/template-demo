@@ -37,24 +37,22 @@ function carttotal(){
     // console.log(cartItem.length)
     for (var i=0;i<cartItem.length;i++){
        var inputValue = cartItem[i].querySelector("input").value
-        console.log(inputValue)
+        // console.log(inputValue)
         var productPrice = cartItem[i].querySelector(".price").innerHTML
-        console.log(productPrice)
+        // console.log(productPrice)
         totalA = inputValue*productPrice*1000
         // totalB = totalA.toLocaleString('de-DE')
         // console.log(totalB)
         totalC = totalC + totalA
-        totalD = totalC.toLocaleString('de-DE')
+        // totalD = totalC.toLocaleString('de-DE')
         // console.log(totalC)
     }
     var cartTotalA = document.querySelector(".price-total span")
-    cartTotalA.innerHTML = totalD
-    
-    inputchange()
-    
+    var cartPrice = document.querySelector(".shopping ")
+    cartTotalA.innerHTML = totalC  
+    cartPrice.innerHTML = totalC.toLocaleString('de-DE')
+    inputchange()  
     // console.log(cartTotalA)
-
-    
 }
 // function cartt(){
 //     for(var i=0;i<cartItem.length;i++){
@@ -89,23 +87,24 @@ function inputchange(){
 }
 
 // const cartbtn = document.querySelector(".fa-xmark")
-// const cartshow = document.querySelector(".fa-cart-shopping")
+// const cartshow = document.querySelector(".shopping")
 // cartshow.addEventListener("click",function(){
 //     console.log(cartshow)
-//     document.querySelector(".cartt").style.right = "0"
+//     document.querySelector(".shopping").style.right = "0"
 // })
 // cartbtn.addEventListener("click",function(){
 //     console.log(cartshow)
 //     // document.querySelector(".cartt").style.right = "-100%"
 // })
 function name(){
-    document.getElementById('cartt').style.display = "block";
+    document.querySelector(".header__add-cart").style.display = "block";
 }
 function element(){
-    document.getElementById('cartt').style.display = "none";
+    document.querySelector('.header__add-cart').style.display = "none";
 }
 function love(){
    var like = document.querySelector(".icon-love");
    alert("Đã yêu thích")
    like.style.color = "red";
 }
+
