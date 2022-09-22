@@ -108,3 +108,6 @@ function love(){
    like.style.color = "red";
 }
 
+// function menu(){
+//     document.querySelector(".toggle").style.display = "block";
+// }

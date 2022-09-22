@@ -264,7 +264,7 @@ i.fa-menu.fa-solid.fa-bars {
     font-family: 'Open Sans', sans-serif;
 }
 .navigation {
-    background-image: url(/img/bac.png);
+    background-image: url(./img/bac.png);
     height: 708px;
     width: 100%;
     position: relative;
@@ -545,6 +545,17 @@ span.swiper-pagination-bullet:hover {
     padding: 12px 20px;
     display: none;
 }
+/* .toggle{
+    animation: identifier linear 1s;
+    position: fixed;
+    width: 30%;
+    height: 100%;
+    left: 0;
+    top: 0px;
+    background-color: #999;
+    padding: 12px 20px;
+    display: none;
+} */
 
 /* reponsive */
 @media screen and (min-width: 1026px) and (max-width: 1440px){
