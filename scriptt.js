@@ -15,14 +15,14 @@ btn.forEach(function(button,index){
 function addcart(productPrice,productName,productImg){
     var addtr = document.createElement("tr")
     var cartItem = document.querySelectorAll("tbody tr")
-    for (var i=0;i<cartItem.length;i++){
-        var productT = document.querySelectorAll(".tle")
-        if(productT[i].innerHTML==productName){
-            alert("Sản phẩm của bạn đã có trong giỏ hàng")
-            return
-        }
-    }
-    var trcontent = '<tr><td><img src="'+productImg+'" alt="ảnh 2"><span class="tle">'+productName+'</span> </td><td><p>$<span class="price">'+productPrice+'</span> </p></td><td><input type="number" value="1" min="0"></td><td><span class = "cart-delete">Xóa</span></td></tr>'
+    // for (var i=0;i<cartItem.length;i++){
+    //     var productT = document.querySelectorAll(".tle")
+    //     if(productT[i].innerHTML==productName){
+    //         alert("Sản phẩm của bạn đã có trong giỏ hàng")
+    //         return
+    //     }
+    // }
+    var trcontent = '<tr><td  style = "display: flex; align-items: center;"><img style = "width: 70px;" src="'+productImg+'" alt="ảnh 2"><span class="tle">'+productName+'</span> </td><td><p>$<span class="price">'+productPrice+'</span> </p></td><td><input style="width: 25px;" type="number" value="1" min="0"></td><td><span style="cursor: pointer;" class = "cart-delete">Xóa</span></td></tr>'
     addtr.innerHTML = trcontent
     var carTable = document.querySelector("tbody")
     carTable.append(addtr)
@@ -48,11 +48,12 @@ function carttotal(){
         // console.log(totalC)
     }
     var cartTotalA = document.querySelector(".price-total span")
-    var cartPrice = document.querySelector(".shopping ")
+    var cartPrice = document.querySelector(".cartAmount ")
     cartTotalA.innerHTML = totalC  
-    cartPrice.innerHTML = totalC.toLocaleString('de-DE')
+    // cartPrice.innerHTML = totalC.toLocaleString('de-DE')
     inputchange()  
     // console.log(cartTotalA)
+    document.getElementsByClassName('cartAmount')[0].textContent = i /= 1;
 }
 // function cartt(){
 //     for(var i=0;i<cartItem.length;i++){
@@ -110,4 +111,18 @@ function love(){
 
 // function menu(){
 //     document.querySelector(".toggle").style.display = "block";
+// }
+// const shopping =  document.querySelector('shopping');
+
+// const name = document.getElementById('name');
+// shopping.onclick = function(){
+//     shopping.classList.shopping('active');
+//     name.classList.shopping('active');
+
+// }
+// document.onclick = function(clickEvent){
+//     if(clickEvent.target.id !== 'name' && clickEvent.target.id !== 'shopping' ){
+//         shopping.classList.remove('active');
+//         name.classList.remove('active');
+//     }
 // }
