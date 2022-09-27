@@ -1,102 +1,137 @@
-const btn = document.querySelectorAll("button")
-// console.log(btn)
-btn.forEach(function(button,index){
-    button.addEventListener("click",function(event){
-        var btnItem = event.target
-        var product = btnItem.parentElement
-        var productImg = product.querySelector("img").src
-        var productName = product.querySelector("H3").innerText
-        var productPrice = product.querySelector("SPAN.price").innerText
-        // console.log(productPrice,productName,productImg)
-        addcart(productPrice,productName,productImg)
-        deleteCart()
+// function love(){
+//     var like = document.querySelector(".icon-love");
+//     alert("Đã yêu thích")
+//     like.style.color = "red";
+//  }
+
+
+ //SELECT ELEMENT
+ const productsEl = document.querySelector(".product-colums");
+ const cartItemsEl = document.querySelector(".item");
+ const subtotalEl = document.querySelector(".price-total");
+ const totalCountEl = document.querySelector(".cartAmount");
+
+
+ //RENDER PRODUCTs
+ function renderProducts(){
+    products.forEach((product) => {
+        productsEl.innerHTML += `
+        <div class="product-item">
+            <div class="product-img">
+                <div class="item1">
+                    <a href="#"><img src="${product.imgSrc}" alt="${product.name}" class="ads-img"></a>
+                    <button class="product-img__btn-add" onclick = "addToCart(${product.id})">add to cart</button>
+                    <a href="#"><h3 class="heading">${product.name}</h3></a>
+                    <p><del>$99.00</del> $<span class="price">${product.price.toFixed(2)}</span> </p> 
+                </div>
+                <div class="star">
+                    <span class="fa-regular fa-star checked"></span>
+                    <span class="fa-regular fa-star checked"></span>
+                    <span class="fa-regular fa-star checked"></span>
+                    <span class="fa-regular fa-star checked"></span>
+                    <span class="fa-regular fa-star"></span>
+                </div>
+            </div>
+        </div>
+        `;
+    });
+ };
+ renderProducts()
+
+ //cart array
+ let cart = [];
+
+ //add to cart
+function addToCart(id) {
+    alert("Thêm sản phẩm thành công");
+    //check if product already exist in cart
+    if(cart.some((item) => item.id === id )){
+      changeNumberOfUnits("plus", id)
+    }else{
+        const item = products.find((product) => product.id === id);
+
+        cart.push({
+            ...item,
+            numberOfUnits: 1,
+        });
+    }
+    updateCart();
+}
+ 
+//updateCart
+function updateCart(){
+    renderCartItems();
+    renderSubtotal();
+}
+
+// calculate and render subtotal
+function renderSubtotal(){
+    let totalPrice = 0, 
+        totalItem = 0;
+
+    cart.forEach((item) => {
+        totalPrice += item.price * item.numberOfUnits;
+        totalItem += item.numberOfUnits;
     })
-})
-function addcart(productPrice,productName,productImg){
-    var addtr = document.createElement("tr")
-    var cartItem = document.querySelectorAll("tbody tr")
-    // for (var i=0;i<cartItem.length;i++){
-    //     var productT = document.querySelectorAll(".tle")
-    //     if(productT[i].innerHTML==productName){
-    //         alert("Sản phẩm của bạn đã có trong giỏ hàng")
-    //         return
-    //     }
-    // }
-    var trcontent = '<tr><td  style = "display: flex; align-items: center;"><img style = "width: 70px;" src="'+productImg+'" alt="ảnh 2"><span class="tle">'+productName+'</span> </td><td><p>$<span class="price">'+productPrice+'</span> </p></td><td><input style="width: 25px;" type="number" value="1" min="0"></td><td><span style="cursor: pointer;" class = "cart-delete">Xóa</span></td></tr>'
-    addtr.innerHTML = trcontent
-    var carTable = document.querySelector("tbody")
-    carTable.append(addtr)
 
-    carttotal()
-    deleteCart()
-}
-//------------total price---------
-function carttotal(){
-    var cartItem = document.querySelectorAll("tbody tr")
-    var totalC = 0
-    // console.log(cartItem.length)
-    for (var i=0;i<cartItem.length;i++){
-       var inputValue = cartItem[i].querySelector("input").value
-        // console.log(inputValue)
-        var productPrice = cartItem[i].querySelector(".price").innerHTML
-        // console.log(productPrice)
-        totalA = inputValue*productPrice*1000
-        // totalB = totalA.toLocaleString('de-DE')
-        // console.log(totalB)
-        totalC = totalC + totalA
-        // totalD = totalC.toLocaleString('de-DE')
-        // console.log(totalC)
-    }
-    var cartTotalA = document.querySelector(".price-total span")
-    var cartPrice = document.querySelector(".cartAmount ")
-    cartTotalA.innerHTML = totalC  
-    // cartPrice.innerHTML = totalC.toLocaleString('de-DE')
-    inputchange()  
-    // console.log(cartTotalA)
-    document.getElementsByClassName('cartAmount')[0].textContent = i /= 1;
-}
-// function cartt(){
-//     for(var i=0;i<cartItem.length;i++){
-//         var cartSp = document.querySelectorAll(".cartt")
-//         // cartPrice.innerHTML = totalC.toLocaleString('de-DE')
-//     }
-// }
-
-
-//--------xóa-------
-function deleteCart(){
-    var cartItem = document.querySelectorAll("tbody tr")
-    for (var i=0;i<cartItem.length;i++){
-        var productT = document.querySelectorAll(".cart-delete")
-        productT[i].addEventListener("click",function(event){
-            var cartDelete = event.target
-            var cartitemR = cartDelete.parentElement.parentElement
-            cartitemR.remove()
-            carttotal()
-            // console.log(cartitemR)
-        }) 
-    }
-}
-function inputchange(){
-    var cartItem = document.querySelectorAll("tbody tr")
-    for (var i=0;i<cartItem.length;i++){
-        var inputValue = cartItem[i].querySelector("input")
-      inputValue.addEventListener("change",function(){
-        carttotal()
-      })
-    }
+    subtotalEl.innerHTML = ` <p>Tổng tiền: $ <span> ${totalPrice.toFixed(2)} </span></p>`
+    totalCountEl.innerHTML =totalItem;
 }
 
-// const cartbtn = document.querySelector(".fa-xmark")
-// const cartshow = document.querySelector(".shopping")
-// cartshow.addEventListener("click",function(){
-//     console.log(cartshow)
-//     document.querySelector(".shopping").style.right = "0"
-// })
-// cartbtn.addEventListener("click",function(){
-//     console.log(cartshow)
-//     // document.querySelector(".cartt").style.right = "-100%"
-// })
+//render cart items
+function renderCartItems(){
+    cartItemsEl.innerHTML = ""// clear cart element
+    cart.forEach((item) => {
+        cartItemsEl.innerHTML +=`
+        <tr class="cart-item cart-item-1" data-id="1">
+            <td><img style="width: 70px;" src="${item.imgSrc}" alt="${item.name}"></td>
+            <td> <h3 class="heading">${item.name}</h3></td>
+            <td><p>$<span class="price"> ${item.price}</span></p></td>
+            <td>
+                <div class="units">
+                    <div class="btn minus" onclick ="changeNumberOfUnits('minus',  ${item.id})">-</div>
+                    <div class="number">${item.numberOfUnits}</div>
+                    <div class="btn plus" onclick ="changeNumberOfUnits('plus',  ${item.id})">+</div>
+                </div>
+            </td>
+            <td style="cursor: pointer;" onclick =" removeItemFromCart(${item.id})">Xoá</td>
+         
+        </tr>
+        `
+    })
+}
+
+// remove item from cart
+function removeItemFromCart(id){
+    cart = cart.filter((item) => item.id !== id);
+
+    updateCart();
+}
+
+//change number of unit for an item 
+function changeNumberOfUnits(action, id) {
+    cart = cart.map((item) => {
+
+        let numberOfUnits = item.numberOfUnits
+
+        if(item.id === id){
+            if(action === "minus" && numberOfUnits > 1){
+                numberOfUnits--;
+            } else if(action === "plus" ){
+                numberOfUnits++;
+            }
+        }
+
+        return {
+            ...item,
+            numberOfUnits,
+        };
+    })
+
+    updateCart();
+}
+
+
 function name(){
     document.querySelector(".header__add-cart").style.display = "block";
 }
@@ -109,20 +144,3 @@ function love(){
    like.style.color = "red";
 }
 
-// function menu(){
-//     document.querySelector(".toggle").style.display = "block";
-// }
-// const shopping =  document.querySelector('shopping');
-
-// const name = document.getElementById('name');
-// shopping.onclick = function(){
-//     shopping.classList.shopping('active');
-//     name.classList.shopping('active');
-
-// }
-// document.onclick = function(clickEvent){
-//     if(clickEvent.target.id !== 'name' && clickEvent.target.id !== 'shopping' ){
-//         shopping.classList.remove('active');
-//         name.classList.remove('active');
-//     }
-// }
